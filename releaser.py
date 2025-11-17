@@ -18,18 +18,6 @@ import zipfile
 import tempfile
 from datetime import datetime
 
-# # Source - https://stackoverflow.com/a/36341469
-# # Posted by Aaron Hall, modified by community. See post 'Timeline' for change history
-# # Retrieved 2025-11-07, License - CC BY-SA 3.0
-#
-# from shutil import make_archive
-# make_archive(
-#   'zipfile_name',
-#   'zip',           # the archive format - or tar, bztar, gztar
-#   root_dir=None,   # root for archive - current working dir if None
-#   base_dir=None)   # start archiving from here - cwd if None too
-
-
 def _zip_directory(source_directory: Path, output_zip_file: Path) -> bool:
     """
     Zips a given directory into a specified ZIP file.
