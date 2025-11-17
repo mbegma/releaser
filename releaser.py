@@ -69,6 +69,9 @@ def _create_files_object_list(source_dir: Path, extension_list: list, destinatio
         # находим разницу между списками parts у объектов source_dir и path_obj и это и будет неизменная часть,
         # ее добавляем к destination_dir и получаем полный путь, куда нужно скопировать файл
         for path_obj in _files_generator:
+            # убрать самого себя
+            if path_obj.name == Path(__file__).name:
+                continue
             _diff_list = [x for x in list(path_obj.parts) if x not in list(source_dir.parts)]
             # проверить, есть ли в _diff_list значения из _exclude_dir
             if len([x for x in _diff_list if x in excluded_dir]) == 0:
